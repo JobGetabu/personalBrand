@@ -14,7 +14,14 @@ export const site = {
   stackLine: "Android · React Native · Flutter · KMM",
   region: "Nairobi, Kenya · works remotely (EAT, UTC+3)",
   timeZone: "Africa/Nairobi",
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://jobgetabu.dev").replace(/\/$/, ""), // TODO(verify): final domain
+  // Custom domain once set (NEXT_PUBLIC_SITE_URL), else Vercel's production URL, which Vercel
+  // exposes to Next.js builds automatically. TODO(verify): final domain.
+  url: (
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.NEXT_PUBLIC_VERCEL_PROJECT_PRODUCTION_URL}`
+      : "https://jobgetabu.dev")
+  ).replace(/\/$/, ""),
   description:
     "Senior mobile engineer with 10+ years crafting scalable apps for fintech, media and logistics. Shipped 10+ apps used by 5M+ people.",
   heroSummary: "Senior mobile engineer. 10+ years shipping Android, React Native and Flutter apps used by millions.",

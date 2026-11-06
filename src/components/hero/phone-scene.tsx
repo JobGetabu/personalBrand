@@ -220,7 +220,14 @@ export default function PhoneScene({ lite, onReady }: { lite: boolean; onReady: 
   const tiltRef = useRef<Tilt>({ x: 0, y: 0 });
   const coarse = useMediaQuery("(pointer: coarse)");
   const gyroAvailable = coarse && typeof window !== "undefined" && "DeviceOrientationEvent" in window;
-  const [gyroOn, setGyroOn] = useState(false);
+  // Android and most browsers need no permission, so tilt is on from the start. iOS asks once,
+  // which needs a tap: tapping the phone itself is that tap (no separate button to overlap things).
+  const needsPermission =
+    typeof DeviceOrientationEvent !== "undefined" &&
+    typeof (DeviceOrientationEvent as unknown as { requestPermission?: unknown }).requestPermission === "function";
+  const [gyroOn, setGyroOn] = useState(
+    () => typeof window !== "undefined" && matchMedia("(pointer: coarse)").matches && "DeviceOrientationEvent" in window && !needsPermission,
+  );
 
   useEffect(() => {
     if (!gyroOn) return;
@@ -246,6 +253,7 @@ export default function PhoneScene({ lite, onReady }: { lite: boolean; onReady: 
     <>
       <Canvas
         aria-hidden="true"
+        onPointerDown={gyroAvailable && !gyroOn ? enableGyro : undefined}
         frameloop="demand"
         dpr={lite ? [1, 1.25] : [1, 2]}
         camera={{ position: [0, 0, 6.2], fov: 38 }}
@@ -258,15 +266,6 @@ export default function PhoneScene({ lite, onReady }: { lite: boolean; onReady: 
         <Phone lite={lite} tiltRef={tiltRef} />
         <Rig lite={lite} onReady={onReady} />
       </Canvas>
-      {gyroAvailable && !gyroOn && (
-        <button
-          type="button"
-          onClick={enableGyro}
-          className="label-mono absolute right-0 top-full mt-3 min-h-11 whitespace-nowrap rounded-full border hairline bg-bg/70 px-4 backdrop-blur hover:text-text"
-        >
-          Enable motion
-        </button>
-      )}
     </>
   );
 }

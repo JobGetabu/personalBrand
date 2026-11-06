@@ -31,7 +31,7 @@ export function HeroPhoneLoader() {
         alt=""
         fill
         priority
-        sizes="(min-width: 1024px) 40vw, 90vw"
+        sizes="(min-width: 1024px) 520px, (min-width: 640px) 380px, 230px"
         className={`object-cover transition-opacity duration-700 [mask-image:radial-gradient(closest-side,#000_70%,transparent)] ${ready ? "opacity-0" : "opacity-100"}`}
       />
       {mode !== "poster" && (
@@ -43,6 +43,7 @@ export function HeroPhoneLoader() {
         <span className="size-1.5 rounded-full bg-accent motion-safe:animate-pulse" />
         GLSL ink · live
         <span className="hidden text-text/70 [@media(pointer:fine)]:inline">· Move to stir ⟶</span>
+        <span className="hidden text-text/70 [@media(pointer:coarse)]:inline">· Tilt or tap</span>
       </p>
       <p className="sr-only">Decorative: a 3D phone whose screen shows the apps I have built, under a green and violet fluid that reacts to your pointer.</p>
     </div>
