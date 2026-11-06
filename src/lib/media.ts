@@ -65,8 +65,10 @@ export const media = {
   labMorph: img("lab/lab-morph-poster@2x.webp", 1200, 1200, "Three abstract glyphs morphing into each other.", "§5.5"),
   labPhysics: img("lab/lab-physics-stack-poster@2x.webp", 1200, 1200, "A tower of app-icon tiles mid-collapse.", "§5.6"),
   error404: img("errors/404-phone@2x.webp", 1600, 1000, "An abstract phone lying face-down, glowing green.", "§9"),
-  // TODO(verify): needs Job's real headshot, edited with prompt §6.
-  portrait: ph("portrait", 2000, 2500, "Portrait of Job Getabu.", "§6"),
+  portrait: img("about/portrait@2x.webp", 2000, 2500, "Portrait of Job Getabu in a dark studio with a soft green rim light.", "06 §P1"),
+  avatar: img("about/avatar.webp", 600, 600, "Job Getabu.", "06 §P1"),
+  held: img("hero/hero-held-mobile@2x.webp", 1200, 1500, "Job Getabu holding a phone whose screen glows green and violet.", "06 §P2"),
+  heldWide: img("hero/hero-held@2x.webp", 2400, 1600, "Job Getabu holding a phone whose screen glows green and violet.", "06 §P2"),
 } satisfies Record<string, MediaItem>;
 
 export type MediaKey = keyof typeof media;

@@ -4,7 +4,7 @@ import { journey, site, skills } from "@/lib/site";
 import { SectionHeading } from "../ui/section-heading";
 
 export function About() {
-  const p = media.portrait;
+  const p = media.held;
   return (
     <section id="about" aria-labelledby="about-title" className="border-t hairline">
       <div className="container-x py-20 md:py-36">

@@ -46,7 +46,7 @@ export const heroStats = [
 ] as const;
 
 /** Monochrome wordmarks only; real logos need employer permission. TODO(verify) per company. */
-export const companies = ["WeR1", "GetMyBoat", "Shackle", "Sendy", "Kazi", "Presta", "Minet", "Syntax"] as const;
+export const companies = ["Andela", "Safaricom", "WeR1", "GetMyBoat", "Shackle", "Sendy", "Kazi", "Presta", "Minet", "Syntax"] as const;
 
 export const skills = [
   "Kotlin",
@@ -123,6 +123,25 @@ export const shipLayers = [
 ] as const;
 
 export const experience = [
+  {
+    company: "Health insurer (confidential)",
+    role: "Mobile Engineer",
+    period: "Dec 2025 – Now",
+    bullets: [
+      "Building member-facing health and wellness apps for a leading health insurer.", // TODO(verify): outcomes once approved
+    ],
+    tech: ["Mobile", "Health"], // TODO(verify): stack
+  },
+  {
+    company: "Andela",
+    role: "Software Engineer",
+    period: "2023 – Now",
+    bullets: [
+      "Mobile engineer embedded with Andela partner teams.",
+      "Worked on Safaricom's My OneApp, which serves 53M people.", // TODO(verify): role on My OneApp and approval to name it
+    ],
+    tech: ["Mobile", "Partner teams"], // TODO(verify): stack
+  },
   {
     company: "WeR1",
     role: "Senior React Native Engineer",
@@ -201,10 +220,11 @@ export const experience = [
     tech: ["Kotlin", "Swift", "Mapbox"],
   },
   {
-    company: "Developer Student Clubs, DeKUT",
+    company: "Andela Learning Community · DSC DeKUT",
     role: "Community Lead",
     period: "2018 – 2019",
     bullets: [
+      "Led the Andela Learning Community alongside Developer Student Clubs at DeKUT.",
       "Upskilled 200+ developers through study jams and workshops.",
       "Ran Android and Flutter tracks.",
       "Mentored the IEEEmadC 2018 winning team.",
@@ -248,7 +268,7 @@ export const recognition = [
   { title: "MTN Business App of the Year — Best African Solution", by: "MTN", year: "2021", note: "Kazi" },
   { title: "IEEEmadC Best Team Award", by: "IEEE", year: "2018", note: "Darasa app" },
   { title: "Google Africa Scholarship — Android", by: "Google & Andela", year: "", note: "Plus a Google Letter of Commendation" },
-  { title: "Developer Student Clubs Lead", by: "DeKUT", year: "2018–2019", note: "200+ developers upskilled" },
+  { title: "Andela Learning Community & DSC Lead", by: "DeKUT", year: "2018–2019", note: "200+ developers upskilled" },
 ] as const;
 
 export const openSource = [
@@ -260,9 +280,9 @@ export const openSource = [
 /** Career chapters for About (synt.ax-style "01 / 04" counter). Facts from docs/04. */
 export const journey = [
   { year: "2014", title: "Hello, world", text: "First program. Windows apps, then Android." },
-  { year: "2018", title: "Community", text: "Led Developer Student Clubs at DeKUT and won IEEEmadC Best Team." },
+  { year: "2018", title: "Community", text: "Led the Andela Learning Community and DSC at DeKUT. Won IEEEmadC Best Team." },
   { year: "2020", title: "Founder", text: "Built Kazi, MTN App of the Year 2021, while shipping Sendy across four countries." },
-  { year: "Now", title: "Millions", text: "Senior mobile engineer. 10+ apps, 5M+ users, Android, React Native and Flutter." },
+  { year: "Now", title: "Millions", text: "Building health apps for a leading insurer. Worked on Safaricom My OneApp, serving 53M people." },
 ] as const;
 
 /** Prefill chips for the contact form. */

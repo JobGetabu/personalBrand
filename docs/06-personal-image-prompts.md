@@ -58,7 +58,7 @@ Also ask for a 4:5 crop (1200×1500) with the phone in the lower half for mobile
 > everyone's appearance unchanged. Blur any faces other than the main speaker, and remove
 > any readable text, banners, logos, room numbers or signs. 3:2, 1800×1200.
 
-## P4. Case-study covers from real screenshots (one per project)
+## P4. Case-study covers from real screenshots (superseded: use 07-screens-in-phones-prompts.md)
 Upload 2–3 screenshots of one app, then:
 > Compose these app screenshots into a case-study cover. Place them on two or three generic
 > modern phones (no brand design cues, thin bezels) floating at slight angles, the front one

@@ -84,7 +84,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     name: site.name,
     jobTitle: site.title,
     url: site.url,
-    image: `${site.url}/images/portrait.svg`,
+    image: `${site.url}/images/about/avatar.webp`,
     sameAs: socials.map((s) => s.href),
     knowsAbout: [
       "Android",

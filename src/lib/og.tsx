@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { site } from "./site";
 
-// Generated base art (docs/03-image-prompts.md §3): phone on the right, empty space left for type.
+// Base art (docs/06 §P5): Job on the right third, empty space left for type.
 const base = `data:image/png;base64,${readFileSync(path.join(process.cwd(), "src/assets/og-base.png")).toString("base64")}`;
 
 export const ogSize = { width: 1200, height: 630 };
