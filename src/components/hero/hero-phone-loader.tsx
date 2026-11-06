@@ -39,7 +39,7 @@ export function HeroPhoneLoader() {
           <PhoneScene lite={mode === "lite"} onReady={() => setReady(true)} />
         </div>
       )}
-      <p className="label-mono absolute left-0 top-full mt-3 flex min-h-11 items-center gap-2" aria-hidden="true">
+      <p className="label-mono absolute left-1/2 top-full mt-3 flex min-h-11 -translate-x-1/2 items-center gap-2 whitespace-nowrap sm:left-0 sm:translate-x-0" aria-hidden="true">
         <span className="size-1.5 rounded-full bg-accent motion-safe:animate-pulse" />
         GLSL ink · live
         <span className="hidden text-text/70 [@media(pointer:fine)]:inline">· Move to stir ⟶</span>
