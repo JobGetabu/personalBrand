@@ -8,6 +8,11 @@ import { ThemeToggle } from "./theme-toggle";
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  // Move focus out of the menu before it turns inert/aria-hidden, so focus never sits in hidden content.
+  const close = () => {
+    (document.activeElement as HTMLElement | null)?.blur();
+    setOpen(false);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -36,7 +41,7 @@ export function Header() {
       >
         <div className="progress-bar absolute inset-x-0 bottom-0 h-px bg-accent opacity-60" aria-hidden="true" />
         <div className="container-x flex h-[72px] items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+          <Link href="/" className="flex items-center gap-3" onClick={close}>
             <span className="sr-only">{site.name}, home</span>
             <span
               aria-hidden="true"
@@ -112,7 +117,7 @@ export function Header() {
               >
                 <Link
                   href={item.href}
-                  onClick={() => setOpen(false)}
+                  onClick={close}
                   className="flex items-baseline gap-3 py-1.5 text-[clamp(2.5rem,12vw,3.5rem)] font-semibold tracking-tight"
                 >
                   <span className="font-mono text-xs text-accent">{String(i + 1).padStart(2, "0")}</span>
@@ -124,7 +129,7 @@ export function Header() {
           <div className="space-y-6">
             <Link
               href="/#contact"
-              onClick={() => setOpen(false)}
+              onClick={close}
               className="flex min-h-12 w-full items-center justify-center gap-3 rounded-full bg-accent font-medium text-accent-ink"
             >
               Start a project <span aria-hidden="true">→</span>

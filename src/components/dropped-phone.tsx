@@ -8,7 +8,7 @@ import { useEffect, useRef, useState } from "react";
 export function DroppedPhone() {
   const box = useRef<HTMLDivElement>(null);
   const phone = useRef<HTMLDivElement>(null);
-  const state = useRef({ x: 0, y: -400, vx: 0, vy: 0, a: -0.4, va: 0.02, drag: false, px: 0, py: 0 });
+  const state = useRef({ x: 0, y: 0, vx: 0, vy: 0, a: -0.4, va: 0.02, drag: false, px: 0, py: 0 });
   const [, force] = useState(0);
 
   useEffect(() => {
