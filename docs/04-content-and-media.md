@@ -46,7 +46,15 @@ LambdaTest) · CI/CD (Fastlane, GitHub Actions) · Clean Architecture · AWS, Me
 Smaller apps for a "More apps" strip: PIP College App (Flutter, 5K+ students), Tausi App
 (5K+ beauticians & clients), Uniti apps (iOS), Hacela (founder/CTO, 2018).
 
+## 3b. Recent roles (from Job, 2026-11-06)
+- Health insurer (keep the company name private) · Mobile Engineer · Dec 2025 – now · health apps.
+- Andela · Software Engineer · 2023 – now · mobile work with partner teams. Public showcase:
+  Safaricom My OneApp (53M people). Only partners Job names here may be published.
+- Andela Learning Community (ALC) Lead, alongside DSC DeKUT · 2018 – 2019.
+
 ## 4. Recognition
+- 1st place, OSF Kenya (Oct 2026, Nairobi): DeckWatch (deckwatch.vercel.app), a live
+  public-safety incident map for Kenya's 47 counties. Organisers: Code for Africa, Ushahidi, OSF Africa.
 - MTN Business App of the Year — Best African Solution (Sep 2021) — Kazi.
 - IEEEmadC Best Team Award (2018) — Darasa App.
 - Google Letter of Commendation · Google Africa Scholarship (Andela) Android course ·

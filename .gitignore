@@ -1,0 +1,19 @@
+node_modules/
+.next/
+out/
+build/
+coverage/
+playwright-report/
+test-results/
+.env*
+!.env.example
+*.pdf
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+.vercel
+# Personal regexes for the privacy guard (never commit)
+.privacy-patterns.local
+# Raw, un-stripped image exports
+assets/raw/
+.lighthouseci/

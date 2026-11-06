@@ -1,0 +1,54 @@
+{
+  "name": "jobgetabu-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "test:e2e": "playwright test --trace off",
+    "images": "node scripts/process-images.mjs",
+    "placeholders": "node scripts/make-placeholders.mjs",
+    "privacy:check": "bash scripts/privacy-check.sh",
+    "verify:todos": "grep -rn \"TODO(verify)\" src content || true"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^9.8.2",
+    "cannon-es": "^0.20.0",
+    "flubber": "^0.4.2",
+    "gray-matter": "^4.0.3",
+    "gsap": "^3.15.1",
+    "lenis": "^1.3.27",
+    "motion": "^14.10.0",
+    "next": "16.4.5",
+    "next-mdx-remote": "^6.0.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "server-only": "^0.0.1",
+    "three": "^0.187.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.0",
+    "@tailwindcss/turbopack": "^4",
+    "@types/flubber": "^0.4.0",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/three": "^0.187.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.5",
+    "prettier": "^3.9.10",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=20.9"
+  }
+}

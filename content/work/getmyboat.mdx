@@ -1,0 +1,40 @@
+---
+title: "GetMyBoat"
+tagline: "Cold start cut by *40%*."
+client: "GetMyBoat"
+role: "Senior Android Engineer"
+period: "May 2023 – Mar 2025"
+team: "Android team" # TODO(verify): team size
+stack: ["Kotlin", "Jetpack Compose", "Baseline Profiles", "Room", "Offline-first", "Macrobenchmark"]
+owned: "Startup performance and offline-first features on Android."
+summary: "Made the world's largest boat rental marketplace app start faster and work on the water, where the network often drops."
+metrics:
+  - { value: "−40%", label: "cold start time" }
+  - { value: "4.9★", label: "Google Play rating" }
+  - { value: "+25%", label: "retention in key markets" }
+cover: "caseGetmyboat"
+order: 2
+links: [] # TODO(verify): add public Play / App Store links
+verify: ["dates overlap with Shackle contract", "public store links", "employer approval for metrics"]
+---
+
+## Context
+
+GetMyBoat is a peer-to-peer marketplace for boat rentals and charters, with 1M+ installs. I worked as a senior Android engineer on the guest and host apps.
+
+## Problem
+
+People open the app at marinas and on the water, often on a weak signal. A slow cold start and screens that failed offline hurt ratings and bookings.
+
+## Approach
+
+- **Measured first.** Set up Macrobenchmark runs to get a reliable cold-start baseline before changing anything.
+- **Cut work off the startup path**: shipped Baseline Profiles, lazily initialised SDKs and moved heavy setup off the main thread.
+- **Built offline-first features** for patchy marine connectivity: cached listings and bookings in Room, queued actions and synced them when the signal came back.
+- **Moved key screens to Jetpack Compose** to speed up UI work and reduce jank.
+
+## Outcome
+
+- **Cold start 40% faster.**
+- **4.9★ Google Play rating.**
+- **Retention up 25%** in key markets such as Miami.
