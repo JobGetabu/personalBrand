@@ -46,8 +46,27 @@ export const heroStats = [
   { value: 3, suffix: "", label: "awards" },
 ] as const;
 
-/** Monochrome wordmarks only; real logos need employer permission. TODO(verify) per company. */
-export const companies = ["Andela", "Safaricom", "WeR1", "GetMyBoat", "Shackle", "Sendy", "Kazi", "Presta", "Minet", "Syntax"] as const;
+/**
+ * Company strip. `logo` points at a monochrome SVG in public/images/logos/ (drawn in the text
+ * colour via CSS mask); without one the name shows as a wordmark. Add a logo by dropping
+ * <slug>.svg in that folder and setting `logo` here. Trademarks belong to their owners.
+ */
+export const companies: ReadonlyArray<{ name: string; logo?: string }> = [
+  { name: "Discovery" },
+  { name: "Vitality" },
+  { name: "Visa", logo: "visa.svg" },
+  { name: "Andela", logo: "andela.svg" },
+  { name: "Safaricom" },
+  { name: "Nybble Technologies" },
+  { name: "WeR1" },
+  { name: "GetMyBoat" },
+  { name: "Shackle" },
+  { name: "Sendy" },
+  { name: "Kazi" },
+  { name: "Presta" },
+  { name: "Minet" },
+  { name: "Syntax" },
+];
 
 export const skills = [
   "Kotlin",

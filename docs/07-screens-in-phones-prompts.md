@@ -129,3 +129,26 @@ shared prompt from the top of this file, plus:
 
 Save as `hero-held-mobile.png` (1200×1500) and `hero-held.png` (2400×1600) if you also
 redo the wide one.
+
+### H3. Add more apps to the 3D hero screen
+Upload `assets/raw/hero-screen.png` first, then each extra app icon (square PNG from the
+app's store listing): Discovery, Vitality, Visa, Safaricom My OneApp, and Nybble
+Technologies' main app, if it has one. Then:
+> Image 1 is a phone screen with six app icons in a 3×2 grid on a dark glow background.
+> The other images are app icons. Edit image 1 so the grid holds **all** the icons: keep
+> the six existing icons exactly as they are, and add each uploaded icon. Arrange them as a
+> neat grid of 3 columns (4 rows if needed), centred, same icon size, same spacing, same
+> rounded-square shape and the same faint green glow under each one.
+> Do not redraw, recolour or simplify any icon or logo; copy them exactly as uploaded.
+> Keep the background glow, colours and the empty top and bottom areas unchanged.
+> Same size as image 1: 1170×2532. No text, no app names, no status bar.
+
+Save it over `assets/raw/hero-screen.png` and tell me. The 3D phone picks it up as is.
+If an icon looks dim, ask: "Make each icon slightly brighter with a soft white rim, keep the
+artwork unchanged."
+
+### Logos for the company strip
+Monochrome logos read best in the strip. For each company, save an SVG (preferred) or a
+transparent PNG of the official logo into `assets/logos/<name>.svg`, e.g. `discovery.svg`,
+`vitality.svg`, `safaricom.svg`, `nybble.svg`, `sendy.svg`. Use the company's media or
+brand page. Visa and Andela are already in.

@@ -83,9 +83,26 @@ export function Hero() {
                 <li
                   key={i}
                   aria-hidden={i >= companies.length || undefined}
-                  className="whitespace-nowrap text-xl font-semibold tracking-tight text-muted transition-colors hover:text-text"
+                  className="flex items-center whitespace-nowrap text-xl font-semibold tracking-tight text-muted transition-colors hover:text-text"
                 >
-                  {c}
+                  {c.logo ? (
+                    <>
+                      <span
+                        aria-hidden="true"
+                        className="block h-10 w-16 bg-current"
+                        style={{
+                          maskImage: `url(/images/logos/${c.logo})`,
+                          WebkitMaskImage: `url(/images/logos/${c.logo})`,
+                          maskRepeat: "no-repeat",
+                          maskPosition: "center",
+                          maskSize: "contain",
+                        }}
+                      />
+                      <span className="sr-only">{c.name}</span>
+                    </>
+                  ) : (
+                    c.name
+                  )}
                 </li>
               ))}
             </ul>

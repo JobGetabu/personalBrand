@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { media } from "@/lib/media";
 import { site, socials } from "@/lib/site";
 import { Rich } from "../ui/rich";
 import { Button } from "../ui/button";
@@ -17,6 +19,17 @@ export function Contact({ status }: { status?: "sent" | "error" }) {
         </h2>
         <div className="mt-16 grid gap-16 lg:grid-cols-[1fr_1.4fr]">
           <div className="space-y-8">
+            <div className="flex items-center gap-4">
+              <Image
+                src={media.portrait.src}
+                alt={media.portrait.alt}
+                width={96}
+                height={120}
+                sizes="96px"
+                className="h-[120px] w-24 rounded-[var(--radius)] border hairline object-cover object-top"
+              />
+              <p className="label-mono">You talk to me directly.<br />No agency in between.</p>
+            </div>
             <p className="max-w-md text-lg text-muted">
               Hiring for a senior or lead mobile role, or need an app built, rescued or sped up? Tell me a little about it and I will get
               back to you.
