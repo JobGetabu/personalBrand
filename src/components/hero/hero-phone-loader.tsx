@@ -44,7 +44,7 @@ export function HeroPhoneLoader() {
         GLSL ink · live
         <span className="hidden text-text/70 [@media(pointer:fine)]:inline">· Move to stir ⟶</span>
       </p>
-      <p className="sr-only">Decorative: an abstract 3D phone whose screen shows a green and violet fluid that reacts to your pointer.</p>
+      <p className="sr-only">Decorative: a 3D phone whose screen shows the apps I have built, under a green and violet fluid that reacts to your pointer.</p>
     </div>
   );
 }

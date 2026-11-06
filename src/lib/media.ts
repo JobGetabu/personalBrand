@@ -67,7 +67,7 @@ export const media = {
   error404: img("errors/404-phone@2x.webp", 1600, 1000, "An abstract phone lying face-down, glowing green.", "§9"),
   portrait: img("about/portrait@2x.webp", 2000, 2500, "Portrait of Job Getabu in a dark studio with a soft green rim light.", "06 §P1"),
   avatar: img("about/avatar.webp", 600, 600, "Job Getabu.", "06 §P1"),
-  held: img("hero/hero-held-mobile@2x.webp", 1200, 1500, "Job Getabu holding a phone whose screen glows green and violet.", "06 §P2"),
+  held: img("hero/hero-held-mobile-v2@2x.webp", 1200, 1500, "Job Getabu holding a phone sideways, showing the 360Score AI app.", "06 §P2"),
   heldWide: img("hero/hero-held@2x.webp", 2400, 1600, "Job Getabu holding a phone whose screen glows green and violet.", "06 §P2"),
 } satisfies Record<string, MediaItem>;
 

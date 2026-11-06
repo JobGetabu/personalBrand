@@ -56,8 +56,9 @@ export async function POST(req: NextRequest) {
 
   const key = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO;
-  const from = process.env.CONTACT_FROM;
-  if (!key || !to || !from) {
+  // Until a domain is verified in Resend, its shared sender works for mail to your own account.
+  const from = process.env.CONTACT_FROM || "Portfolio <onboarding@resend.dev>";
+  if (!key || !to) {
     console.warn("[contact] email delivery is not configured");
     return reply(503, { ok: false, error: "The form is not connected yet. Please reach out on LinkedIn." });
   }

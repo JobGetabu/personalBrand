@@ -20,6 +20,8 @@ uniform float uStir;
 uniform vec3 uA;
 uniform vec3 uB;
 uniform float uScroll;
+uniform sampler2D uTex;
+uniform float uHasTex;
 
 vec2 hash(vec2 p) { p = vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3))); return -1.0 + 2.0 * fract(sin(p) * 43758.5453123); }
 float noise(vec2 p) {
@@ -49,12 +51,20 @@ void main() {
   // vignette + scanline sheen
   col *= smoothstep(1.25, 0.2, length((uv - 0.5) * vec2(1.6, 1.0)));
   col += 0.04 * smoothstep(0.0, 1.0, sin((uv.y + uTime * 0.05) * 3.14159 * 2.0));
+  if (uHasTex > 0.0) {
+    // Real screen image (Job's app icons) with the live ink as a soft screen-blend layer on top.
+    vec3 tex = texture2D(uTex, uv).rgb;
+    vec3 ink = col * (0.4 + swirl * 0.6);
+    col = mix(col, 1.0 - (1.0 - tex) * (1.0 - ink), uHasTex);
+  }
   col = mix(col, vec3(0.03, 0.035, 0.045), uScroll * 0.6);
   gl_FragColor = vec4(col, 1.0);
 }
 `;
 
 type Tilt = { x: number; y: number };
+
+const SCREEN_SRC = "/images/hero/hero-screen.webp";
 
 function Phone({ lite, tiltRef }: { lite: boolean; tiltRef: React.RefObject<Tilt> }) {
   const group = useRef<THREE.Group>(null);
@@ -73,9 +83,31 @@ function Phone({ lite, tiltRef }: { lite: boolean; tiltRef: React.RefObject<Tilt
       uScroll: { value: 0 },
       uA: { value: new THREE.Color("#3DFFA2") },
       uB: { value: new THREE.Color("#7C5CFF") },
+      uTex: { value: null as THREE.Texture | null },
+      uHasTex: { value: 0 },
     }),
     [],
   );
+
+  // Screen image: fades in over the ink once loaded; the ink alone stays as the fallback.
+  useEffect(() => {
+    let tex: THREE.Texture | null = null;
+    let cancelled = false;
+    new THREE.TextureLoader().load(SCREEN_SRC, (t) => {
+      if (cancelled) return t.dispose();
+      t.colorSpace = THREE.NoColorSpace; // raw sRGB values straight to the sRGB canvas (no tone mapping here)
+      t.anisotropy = 4;
+      tex = t;
+      uniforms.uTex.value = t;
+      fadeIn.current = true;
+      invalidate();
+    });
+    return () => {
+      cancelled = true;
+      tex?.dispose();
+    };
+  }, [uniforms, invalidate]);
+  const fadeIn = useRef(false);
 
   useEffect(() => {
     const move = (e: PointerEvent) => {
@@ -111,6 +143,7 @@ function Phone({ lite, tiltRef }: { lite: boolean; tiltRef: React.RefObject<Tilt
     uniforms.uPointer.value.lerp(pointer.current, 0.08);
     uniforms.uStir.value = stir.current;
     uniforms.uScroll.value = Math.min(scroll, 1);
+    if (fadeIn.current && uniforms.uHasTex.value < 1) uniforms.uHasTex.value = Math.min(uniforms.uHasTex.value + step * 1.5, 1);
   });
 
   return (
