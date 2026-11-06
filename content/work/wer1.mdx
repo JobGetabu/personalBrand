@@ -1,0 +1,39 @@
+---
+title: "WeR1"
+tagline: "A custom audio engine, built in *three* months."
+client: "WeR1"
+role: "Senior React Native Engineer"
+period: "Apr – Dec 2025"
+team: "Mobile team" # TODO(verify): team size
+stack: ["React Native", "Expo 53", "TypeScript", "Fabric", "TurboModules", "Offline cache"]
+summary: "Built a custom audio player library and led the move to the React Native New Architecture for a music streaming app."
+metrics:
+  - { value: "3 mo", label: "custom audio library, idea to production" }
+  - { value: "100K+", label: "concurrent streams with offline-first caching" }
+  - { value: "−35%", label: "runtime errors after TypeScript strict" }
+cover: "caseWer1"
+order: 1
+links: [] # TODO(verify): public app/brand link
+verify: ["team size", "public app link", "employer approval for metrics"]
+---
+
+## Context
+
+WeR1 is a music streaming product. I joined as a senior React Native engineer to own playback, the part of the app people feel most.
+
+## Problem
+
+Off-the-shelf players could not give the team the control it needed over buffering, caching and background playback. The app was also still on the old React Native architecture, which made native audio work slow to build and harder to keep stable.
+
+## Approach
+
+- **Built a custom audio player library** in 3 months, with a typed JavaScript API over native playback on Android and iOS.
+- **Led the migration to the New Architecture and Expo 53**, moving native modules to TurboModules and UI to Fabric in steps that kept releases going.
+- **Designed offline-first audio caching** so tracks keep playing on weak networks, built to hold up at 100K+ concurrent streams.
+- **Moved the codebase to TypeScript strict mode** and fixed the type holes it surfaced.
+
+## Outcome
+
+- A playback engine the team owns end to end, shipped in one quarter.
+- **35% fewer runtime errors** after the strict-mode migration.
+- A modern React Native base that new features can build on.

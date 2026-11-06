@@ -1,0 +1,6 @@
+.next
+node_modules
+docs
+.claude
+public/images
+package-lock.json

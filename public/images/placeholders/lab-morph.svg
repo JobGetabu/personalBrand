@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+<defs>
+<radialGradient id="g" cx="62%" cy="45%" r="55%"><stop offset="0" stop-color="#7C5CFF" stop-opacity=".45"/><stop offset=".55" stop-color="#3DFFA2" stop-opacity=".10"/><stop offset="1" stop-color="#07080A" stop-opacity="0"/></radialGradient>
+<linearGradient id="p" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3DFFA2" stop-opacity=".55"/><stop offset="1" stop-color="#7C5CFF" stop-opacity=".55"/></linearGradient>
+<pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="#EDEEF0" stroke-opacity=".05" stroke-width="1"/></pattern>
+</defs>
+<rect width="1200" height="1200" fill="#07080A"/>
+<rect width="1200" height="1200" fill="url(#grid)"/>
+<rect width="1200" height="1200" fill="url(#g)"/>
+<g transform="translate(744 576) rotate(-14)">
+<rect x="-156" y="-312" width="312" height="624" rx="48" fill="#0E1014" stroke="url(#p)" stroke-width="4.8"/>
+<rect x="-138" y="-288" width="276" height="576" rx="36" fill="url(#p)" opacity=".18"/>
+</g>
+<rect x="36" y="36" width="1128" height="1128" fill="none" stroke="#EDEEF0" stroke-opacity=".12"/>
+<g font-family="ui-monospace, Menlo, monospace" fill="#8A8F98" font-size="34">
+<text x="72" y="1044" fill="#3DFFA2">PLACEHOLDER</text>
+<text x="72" y="1092">lab-morph · 1200×1200</text>
+<text x="72" y="1134">docs/03-image-prompts.md §5.5</text>
+</g>
+</svg>

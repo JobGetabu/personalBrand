@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs>
+<radialGradient id="g" cx="62%" cy="45%" r="55%"><stop offset="0" stop-color="#7C5CFF" stop-opacity=".45"/><stop offset=".55" stop-color="#3DFFA2" stop-opacity=".10"/><stop offset="1" stop-color="#07080A" stop-opacity="0"/></radialGradient>
+<linearGradient id="p" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3DFFA2" stop-opacity=".55"/><stop offset="1" stop-color="#7C5CFF" stop-opacity=".55"/></linearGradient>
+<pattern id="grid" width="52.5" height="52.5" patternUnits="userSpaceOnUse"><path d="M 52.5 0 L 0 0 0 52.5" fill="none" stroke="#EDEEF0" stroke-opacity=".05" stroke-width="1"/></pattern>
+</defs>
+<rect width="1200" height="630" fill="#07080A"/>
+<rect width="1200" height="630" fill="url(#grid)"/>
+<rect width="1200" height="630" fill="url(#g)"/>
+<g transform="translate(744 302.4) rotate(-14)">
+<rect x="-81.9" y="-163.8" width="163.8" height="327.6" rx="25.2" fill="#0E1014" stroke="url(#p)" stroke-width="2.52"/>
+<rect x="-72.45" y="-151.2" width="144.9" height="302.4" rx="18.9" fill="url(#p)" opacity=".18"/>
+</g>
+<rect x="18.9" y="18.9" width="1162.2" height="592.2" fill="none" stroke="#EDEEF0" stroke-opacity=".12"/>
+<g font-family="ui-monospace, Menlo, monospace" fill="#8A8F98" font-size="18">
+<text x="37.8" y="548.1" fill="#3DFFA2">PLACEHOLDER</text>
+<text x="37.8" y="573.3">og-base · 1200×630</text>
+<text x="37.8" y="595.35">docs/03-image-prompts.md §3</text>
+</g>
+</svg>
