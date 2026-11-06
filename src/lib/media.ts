@@ -22,15 +22,6 @@ const img = (path: string, width: number, height: number, alt: string, prompt: s
   placeholder: false,
 });
 
-const ph = (name: string, width: number, height: number, alt: string, prompt: string): MediaItem => ({
-  src: `/images/placeholders/${name}.svg`,
-  width,
-  height,
-  alt,
-  prompt,
-  placeholder: true,
-});
-
 export const media = {
   heroPhone: img("hero/hero-phone@2x.webp", 2400, 1600, "An abstract floating phone whose screen glows with green and violet fluid.", "§1"),
   heroPhoneMobile: img(

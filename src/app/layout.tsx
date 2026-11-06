@@ -1,3 +1,4 @@
+import { ScrollReset } from "@/components/scroll-reset";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { headers } from "next/headers";
@@ -104,6 +105,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-theme="dark"
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
       className={`${display.variable} ${serif.variable} ${mono.variable} antialiased`}
     >
@@ -126,6 +128,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           <span className="intro-bar" />
         </div>
         <MotionRoot />
+        <ScrollReset />
         <SoundToggle />
       </body>
     </html>
