@@ -89,6 +89,14 @@ function Phone({ lite, tiltRef }: { lite: boolean; tiltRef: React.RefObject<Tilt
     [],
   );
 
+  // Built once with the shared uniforms object, so useFrame writes reach the GPU (passing
+  // uniforms as a JSX prop handed the material a copy, which froze uTex/uHasTex at their defaults).
+  const screenMat = useMemo(
+    () => new THREE.ShaderMaterial({ vertexShader: vert, fragmentShader: frag, uniforms, toneMapped: false }),
+    [uniforms],
+  );
+  useEffect(() => () => screenMat.dispose(), [screenMat]);
+
   // Screen image: fades in over the ink once loaded; the ink alone stays as the fallback.
   useEffect(() => {
     let tex: THREE.Texture | null = null;
@@ -160,7 +168,7 @@ function Phone({ lite, tiltRef }: { lite: boolean; tiltRef: React.RefObject<Tilt
       </mesh>
       <mesh position={[0, 0, 0.081]}>
         <planeGeometry args={[1.46, 3.14, 1, 1]} />
-        <shaderMaterial vertexShader={vert} fragmentShader={frag} uniforms={uniforms} toneMapped={false} />
+        <primitive object={screenMat} attach="material" />
       </mesh>
       {/* glass edge highlight */}
       <mesh position={[0, 0, 0.0815]}>
