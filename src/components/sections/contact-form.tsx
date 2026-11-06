@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { budgets } from "@/lib/budgets";
 import { contactPresets } from "@/lib/site";
 
-type Status = { kind: "idle" | "sending" | "sent" | "error"; message?: string };
+type Status = { kind: "idle" | "sending" | "sent" | "error"; message?: string; mailHref?: string };
 const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 declare global {
@@ -44,13 +44,15 @@ export function ContactForm({ initial }: { initial?: "sent" | "error" }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      const json = (await res.json()) as { ok: boolean; error?: string; fieldErrors?: Record<string, string> };
+      const json = (await res.json()) as { ok: boolean; error?: string; fieldErrors?: Record<string, string>; mailHref?: string };
       if (json.ok) {
         setStatus({ kind: "sent" });
         form.reset();
       } else {
         setErrors(json.fieldErrors ?? {});
-        setStatus({ kind: "error", message: json.error });
+        setStatus({ kind: "error", message: json.error, mailHref: json.mailHref });
+        // Delivery is down: open the visitor's mail app with the message already written.
+        if (json.mailHref) window.location.href = json.mailHref;
         window.turnstile?.reset(tsId.current);
         const first = json.fieldErrors && Object.keys(json.fieldErrors)[0];
         if (first) (form.elements.namedItem(first) as HTMLElement | null)?.focus();
@@ -170,6 +172,14 @@ export function ContactForm({ initial }: { initial?: "sent" | "error" }) {
       <p aria-live="assertive" className="text-sm text-red-300">
         {status.kind === "error" ? status.message : ""}
       </p>
+      {status.kind === "error" && status.mailHref && (
+        <a
+          href={status.mailHref}
+          className="inline-flex min-h-12 items-center gap-3 rounded-full border hairline px-7 font-medium hover:border-text"
+        >
+          Send it from your email app instead <span aria-hidden="true">→</span>
+        </a>
+      )}
     </form>
   );
 }

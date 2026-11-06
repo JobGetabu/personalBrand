@@ -58,9 +58,21 @@ export async function POST(req: NextRequest) {
   const to = process.env.CONTACT_TO;
   // Until a domain is verified in Resend, its shared sender works for mail to your own account.
   const from = process.env.CONTACT_FROM || "Portfolio <onboarding@resend.dev>";
+  // Fallback: hand the visitor's mail app a prefilled email. The address is only ever sent
+  // in this response, after a valid submit, so it never sits in the page for scrapers.
+  const fallbackTo = process.env.CONTACT_FALLBACK_EMAIL;
+  const fallback = () =>
+    fallbackTo
+      ? {
+          mailHref: `mailto:${fallbackTo}?subject=${encodeURIComponent(`Portfolio enquiry from ${data.name.slice(0, 60)}`)}&body=${encodeURIComponent(
+            `${data.message}\n\n${data.name}${data.company ? ` · ${data.company}` : ""}\nBudget/role: ${data.budget}`,
+          )}`,
+        }
+      : {};
+
   if (!key || !to) {
     console.warn("[contact] email delivery is not configured");
-    return reply(503, { ok: false, error: "The form is not connected yet. Please reach out on LinkedIn." });
+    return reply(503, { ok: false, error: "The form can't send right now.", ...fallback() });
   }
 
   const html = `
@@ -87,7 +99,7 @@ export async function POST(req: NextRequest) {
     if (!res.ok) throw new Error(`Resend ${res.status}`);
   } catch (e) {
     console.error("[contact] send failed", e instanceof Error ? e.message : "unknown");
-    return reply(502, { ok: false, error: "Something went wrong sending your message. Please try LinkedIn." });
+    return reply(502, { ok: false, error: "Something went wrong sending your message.", ...fallback() });
   }
   return reply(200, { ok: true });
 }
