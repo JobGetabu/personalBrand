@@ -71,7 +71,7 @@ export default function OfflineFirst({ active }: { active: boolean }) {
           max={100}
           value={signal}
           onChange={(e) => setSignal(+e.target.value)}
-          className="w-full accent-[var(--accent)]"
+          className="h-11 w-full cursor-pointer accent-[var(--accent)]"
           aria-label="Network signal strength"
         />
       </label>

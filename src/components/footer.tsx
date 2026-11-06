@@ -6,6 +6,15 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="border-t hairline">
+      <div className="container-x border-b hairline py-16 md:py-24">
+        <p className="display text-[clamp(2.5rem,8vw,6.5rem)]">
+          Apps that <em className="em">feel</em> native.
+          <br />
+          <Link href="/#contact" className="text-muted transition-colors hover:text-text">
+            Let&rsquo;s build <em className="em">yours</em> <span aria-hidden="true">→</span>
+          </Link>
+        </p>
+      </div>
       <div className="container-x grid gap-10 py-12 md:grid-cols-[1fr_auto_auto] md:items-start">
         <div className="space-y-3">
           <p className="text-2xl font-semibold tracking-tight">
@@ -15,30 +24,35 @@ export function Footer() {
           <p className="max-w-sm text-sm text-muted">{site.region}</p>
         </div>
         <nav aria-label="Footer">
-          <ul className="grid grid-cols-2 gap-x-10 gap-y-2 text-sm">
+          <ul className="grid grid-cols-2 gap-x-10 text-sm md:gap-y-2">
             {nav.map((n) => (
               <li key={n.href}>
-                <Link href={n.href} className="text-muted hover:text-text">
+                <Link href={n.href} className="inline-flex min-h-11 items-center text-muted hover:text-text md:min-h-0">
                   {n.label}
                 </Link>
               </li>
             ))}
             <li>
-              <Link href="/uses" className="text-muted hover:text-text">
+              <Link href="/uses" className="inline-flex min-h-11 items-center text-muted hover:text-text md:min-h-0">
                 Uses
               </Link>
             </li>
             <li>
-              <Link href="/now" className="text-muted hover:text-text">
+              <Link href="/now" className="inline-flex min-h-11 items-center text-muted hover:text-text md:min-h-0">
                 Now
               </Link>
             </li>
           </ul>
         </nav>
-        <ul className="space-y-2 text-sm">
+        <ul className="text-sm md:space-y-2">
           {socials.map((s) => (
             <li key={s.href}>
-              <a href={s.href} target="_blank" rel="noopener noreferrer me" className="text-muted hover:text-text">
+              <a
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer me"
+                className="inline-flex min-h-11 items-center text-muted hover:text-text md:min-h-0"
+              >
                 {s.label} <span aria-hidden="true">↗</span>
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>

@@ -219,7 +219,7 @@ export default function PhoneScene({ lite, onReady }: { lite: boolean; onReady: 
         <button
           type="button"
           onClick={enableGyro}
-          className="label-mono absolute bottom-2 left-1/2 min-h-11 -translate-x-1/2 rounded-full border hairline bg-bg/70 px-4 backdrop-blur hover:text-text"
+          className="label-mono absolute right-0 top-full mt-3 min-h-11 whitespace-nowrap rounded-full border hairline bg-bg/70 px-4 backdrop-blur hover:text-text"
         >
           Enable motion
         </button>

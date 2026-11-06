@@ -6,7 +6,7 @@ export function Services() {
   const bookHref = site.calUrl || "/#contact";
   return (
     <section id="services" aria-labelledby="services-title" className="border-t hairline">
-      <div className="container-x py-24 md:py-36">
+      <div className="container-x py-20 md:py-36">
         <SectionHeading
           id="services-title"
           index="05"

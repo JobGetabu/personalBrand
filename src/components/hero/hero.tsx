@@ -11,7 +11,7 @@ export function Hero() {
   return (
     <section aria-labelledby="hero-title" className="relative overflow-clip pt-[72px]">
       <div className="glow pointer-events-none absolute right-[-10%] top-[10%] size-[70vmin]" aria-hidden="true" />
-      <div className="container-x grid-12 relative min-h-[calc(100svh-72px)] content-center gap-y-10 py-12 lg:py-0">
+      <div className="container-x grid-12 relative min-h-[calc(100svh-72px)] content-center gap-y-6 pb-10 pt-8 lg:py-0">
         <div className="col-span-full flex flex-col justify-center lg:col-span-7">
           <p className="label-mono hero-fade mb-6" style={{ ["--i" as string]: 0 }}>
             <span className="text-accent">00</span> — {site.name} · {site.title}
@@ -56,12 +56,16 @@ export function Hero() {
 
       {/* Credibility strip */}
       <div className="border-y hairline">
-        <div className="container-x grid gap-6 py-6 md:grid-cols-[auto_1fr] md:items-center md:gap-12">
-          <dl className="flex gap-8">
+        <div className="container-x grid gap-6 py-6 md:grid-cols-[auto_auto_1fr] md:items-center md:gap-12">
+          <p className="label-mono flex items-center gap-2">
+            <span className="size-1.5 rounded-full bg-accent motion-safe:animate-pulse" aria-hidden="true" />
+            Live · in production
+          </p>
+          <dl className="grid grid-cols-3 gap-4 sm:flex sm:gap-8">
             {heroStats.map((s) => (
               <div key={s.label}>
                 <dt className="sr-only">{s.label}</dt>
-                <dd className="flex items-baseline gap-2">
+                <dd className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-2">
                   <span className="text-3xl font-semibold tracking-tight tabular-nums">
                     <span data-count={s.value}>{s.value}</span>
                     {s.suffix}

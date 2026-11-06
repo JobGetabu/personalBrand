@@ -97,6 +97,10 @@ export default async function CaseStudyPage({ params }: PageProps<"/work/[slug]"
           </ViewTransition>
         </div>
 
+        <p className="mt-10 flex flex-col gap-2 rounded-[var(--radius)] border border-accent/30 bg-accent/5 p-5 sm:flex-row sm:items-baseline sm:gap-6">
+          <span className="label-mono shrink-0 text-accent">What I owned</span>
+          <span className="text-lg">{w.owned}</span>
+        </p>
         <dl className="grid grid-cols-2 gap-6 border-b hairline py-10 md:grid-cols-4">
           {[
             ["Role", w.role],

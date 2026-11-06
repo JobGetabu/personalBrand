@@ -133,7 +133,7 @@ export default function PhysicsStack({ active }: { active: boolean }) {
         <button
           type="button"
           onClick={() => (api.current?.knock(), setStarted(true))}
-          className="min-h-9 rounded-full bg-accent font-mono text-[11px] text-accent-ink"
+          className="min-h-11 rounded-full bg-accent font-mono text-[11px] text-accent-ink"
         >
           Knock it over
         </button>
@@ -141,7 +141,7 @@ export default function PhysicsStack({ active }: { active: boolean }) {
           type="button"
           onClick={() => api.current?.reset()}
           disabled={!started}
-          className="min-h-9 rounded-full border hairline font-mono text-[11px] text-muted disabled:opacity-40"
+          className="min-h-11 rounded-full border hairline font-mono text-[11px] text-muted disabled:opacity-40"
         >
           Rebuild
         </button>

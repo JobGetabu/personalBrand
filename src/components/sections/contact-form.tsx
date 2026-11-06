@@ -2,6 +2,7 @@
 import Script from "next/script";
 import { useRef, useState } from "react";
 import { budgets } from "@/lib/budgets";
+import { contactPresets } from "@/lib/site";
 
 type Status = { kind: "idle" | "sending" | "sent" | "error"; message?: string };
 const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
@@ -23,6 +24,7 @@ export function ContactForm({ initial }: { initial?: "sent" | "error" }) {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [startedAt, setStartedAt] = useState<number>(0);
   const tsRef = useRef<HTMLDivElement>(null);
+  const msgRef = useRef<HTMLTextAreaElement>(null);
   const tsId = useRef<string | undefined>(undefined);
 
   const renderTurnstile = () => {
@@ -120,9 +122,30 @@ export function ContactForm({ initial }: { initial?: "sent" | "error" }) {
           </select>
         </label>
       </div>
+      <fieldset className="grid gap-2">
+        <legend className="mb-2 text-sm">Start with one sentence, or pick one</legend>
+        <div className="flex flex-wrap gap-2">
+          {contactPresets.map((p) => (
+            <button
+              key={p}
+              type="button"
+              onClick={() => {
+                const el = msgRef.current;
+                if (!el) return;
+                el.value = `${p.replace(" · ", ": ")}. `;
+                el.focus();
+                el.setSelectionRange(el.value.length, el.value.length);
+              }}
+              className="min-h-11 rounded-full border hairline px-4 text-sm text-muted transition-colors hover:border-accent hover:text-text"
+            >
+              {p}
+            </button>
+          ))}
+        </div>
+      </fieldset>
       <label className="grid gap-2">
         <span className="text-sm">What are you building?</span>
-        <textarea name="message" required rows={5} minLength={20} maxLength={4000} className={field} {...a11y("message")} />
+        <textarea ref={msgRef} name="message" required rows={5} minLength={20} maxLength={4000} className={field} {...a11y("message")} />
         {err("message")}
       </label>
       {/* Honeypot: hidden from people and assistive tech */}

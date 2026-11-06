@@ -6,7 +6,7 @@ export async function Recognition() {
   const stars = await Promise.all(openSource.map((r) => getStars(r.repo, r.fallbackStars)));
   return (
     <section id="recognition" aria-labelledby="rec-title" className="border-t hairline">
-      <div className="container-x py-24 md:py-36">
+      <div className="container-x py-20 md:py-36">
         <SectionHeading id="rec-title" index="06" label="Recognition & community" title="Awards, *and* giving back." />
         <div className="grid gap-12 lg:grid-cols-2">
           <ul className="divide-y divide-line border-y hairline">

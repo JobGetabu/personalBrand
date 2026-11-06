@@ -52,7 +52,7 @@ export default function ColdStart() {
           max={100}
           value={p}
           onChange={(e) => setP(+e.target.value)}
-          className="w-full accent-[var(--accent)]"
+          className="h-11 w-full cursor-pointer accent-[var(--accent)]"
           aria-label="Scrub from before to after optimisation"
         />
       </label>

@@ -2,12 +2,13 @@ import { site, socials } from "@/lib/site";
 import { Rich } from "../ui/rich";
 import { Button } from "../ui/button";
 import { ContactForm } from "./contact-form";
+import { Overlap } from "./overlap";
 
 export function Contact({ status }: { status?: "sent" | "error" }) {
   return (
     <section id="contact" aria-labelledby="contact-title" className="relative overflow-clip border-t hairline">
       <div className="glow pointer-events-none absolute -left-[20%] bottom-0 size-[80vmin]" aria-hidden="true" />
-      <div className="container-x relative py-24 md:py-36">
+      <div className="container-x relative py-20 md:py-36">
         <p className="label-mono mb-8">
           <span className="text-accent">08</span> — Contact
         </p>
@@ -41,6 +42,7 @@ export function Contact({ status }: { status?: "sent" | "error" }) {
               ))}
             </ul>
             <p className="label-mono">{site.region}</p>
+            <Overlap />
           </div>
           <ContactForm initial={status} />
         </div>

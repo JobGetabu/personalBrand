@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { media } from "@/lib/media";
-import { site, skills } from "@/lib/site";
+import { journey, site, skills } from "@/lib/site";
 import { SectionHeading } from "../ui/section-heading";
 
 export function About() {
   const p = media.portrait;
   return (
     <section id="about" aria-labelledby="about-title" className="border-t hairline">
-      <div className="container-x py-24 md:py-36">
+      <div className="container-x py-20 md:py-36">
         <SectionHeading id="about-title" index="07" label="About" title="Built to be *held*." />
         <div className="grid-12 gap-y-12">
           <div className="col-span-full sm:col-span-3 lg:col-span-4">
@@ -44,6 +44,17 @@ export function About() {
             </ul>
           </div>
         </div>
+        <ol className="mt-20 grid gap-px overflow-hidden rounded-[var(--radius)] border hairline bg-line sm:grid-cols-2 lg:grid-cols-4">
+          {journey.map((j, i) => (
+            <li key={j.title} data-reveal className="bg-bg p-6">
+              <p className="label-mono">
+                <span className="text-accent">{String(i + 1).padStart(2, "0")}</span> / {String(journey.length).padStart(2, "0")} · {j.year}
+              </p>
+              <h3 className="mt-6 text-2xl font-semibold tracking-tight">{j.title}</h3>
+              <p className="mt-2 text-sm text-muted">{j.text}</p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

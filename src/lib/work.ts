@@ -15,6 +15,7 @@ const Frontmatter = z.object({
   period: z.string(),
   team: z.string(),
   stack: z.array(z.string()).max(6),
+  owned: z.string().max(140),
   summary: z.string().max(220),
   metrics: z
     .array(z.object({ value: z.string(), label: z.string() }))

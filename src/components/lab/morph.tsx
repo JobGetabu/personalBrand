@@ -57,7 +57,7 @@ export default function Morph({ active }: { active: boolean }) {
             type="button"
             onClick={() => go(k)}
             aria-pressed={i === k}
-            className={`min-h-9 rounded-full font-mono text-[11px] ${i === k ? "bg-accent text-accent-ink" : "border hairline text-muted"}`}
+            className={`min-h-11 rounded-full font-mono text-[11px] ${i === k ? "bg-accent text-accent-ink" : "border hairline text-muted"}`}
           >
             {s.name}
           </button>

@@ -25,7 +25,7 @@ export function HeroPhoneLoader() {
   }, []);
 
   return (
-    <div className="relative mx-auto aspect-[4/5] w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[520px]">
+    <div className="relative mx-auto aspect-[4/5] w-full max-w-[230px] sm:max-w-[380px] lg:max-w-[520px]">
       <Image
         src={media.heroPhoneMobile.src}
         alt=""
@@ -39,6 +39,11 @@ export function HeroPhoneLoader() {
           <PhoneScene lite={mode === "lite"} onReady={() => setReady(true)} />
         </div>
       )}
+      <p className="label-mono absolute left-0 top-full mt-3 flex min-h-11 items-center gap-2" aria-hidden="true">
+        <span className="size-1.5 rounded-full bg-accent motion-safe:animate-pulse" />
+        GLSL ink · live
+        <span className="hidden text-text/70 [@media(pointer:fine)]:inline">· Move to stir ⟶</span>
+      </p>
       <p className="sr-only">Decorative: an abstract 3D phone whose screen shows a green and violet fluid that reacts to your pointer.</p>
     </div>
   );

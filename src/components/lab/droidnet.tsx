@@ -92,7 +92,7 @@ export default function DroidNet({ active }: { active: boolean }) {
             role="radio"
             aria-checked={state === s}
             onClick={() => setState(s)}
-            className={`min-h-9 rounded-full font-mono text-[11px] transition-colors ${state === s ? "bg-accent text-accent-ink" : "text-muted hover:text-text"}`}
+            className={`min-h-11 rounded-full font-mono text-[11px] transition-colors ${state === s ? "bg-accent text-accent-ink" : "text-muted hover:text-text"}`}
           >
             {s}
           </button>

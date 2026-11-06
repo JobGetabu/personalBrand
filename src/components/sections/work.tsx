@@ -9,7 +9,7 @@ import { Rich, plain } from "../ui/rich";
 export function Work() {
   const work = getAllWork();
   return (
-    <section id="work" aria-labelledby="work-title" className="container-x py-24 md:py-36">
+    <section id="work" aria-labelledby="work-title" className="container-x py-20 md:py-36">
       <SectionHeading
         id="work-title"
         index="01"
@@ -40,7 +40,7 @@ export function Work() {
                   </ViewTransition>
                   <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent" />
                   <span className="label-mono absolute left-5 top-5 rounded-full border hairline bg-bg/60 px-3 py-1 backdrop-blur">
-                    {String(i + 1).padStart(2, "0")} · {w.client}
+                    P.{String(i + 1).padStart(2, "0")} · {w.client}
                   </span>
                 </div>
                 <div className="grid gap-6 p-6 md:grid-cols-[1fr_auto] md:items-end md:p-8">
@@ -51,6 +51,10 @@ export function Work() {
                     </h3>
                     <p className="mt-2 text-lg text-muted" aria-hidden="true">
                       <Rich text={w.tagline} />
+                    </p>
+                    <p className="mt-4 flex gap-3 text-sm">
+                      <span className="label-mono shrink-0 pt-0.5 text-accent">What I owned</span>
+                      <span className="text-text/85">{w.owned}</span>
                     </p>
                     <ul className="mt-5 flex flex-wrap gap-2" aria-label="Stack">
                       {w.stack.slice(0, 4).map((s) => (

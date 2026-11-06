@@ -70,6 +70,7 @@ export const skills = [
 export const shipLayers = [
   {
     name: "Architecture",
+    keywords: "Domain · data · UI · modules",
     practices: [
       "Clean Architecture with clear domain, data and UI layers",
       "Offline-first data with a single source of truth",
@@ -79,6 +80,7 @@ export const shipLayers = [
   },
   {
     name: "Interface",
+    keywords: "Compose · Fabric · SwiftUI · RTL",
     practices: [
       "Declarative UI that feels native on each platform",
       "Accessibility and RTL from day one",
@@ -88,6 +90,7 @@ export const shipLayers = [
   },
   {
     name: "Performance",
+    keywords: "Measure · profile · cut · guard",
     practices: [
       "Measure cold start, jank and memory before changing anything",
       "Baseline Profiles and lazy init on the startup path",
@@ -97,6 +100,7 @@ export const shipLayers = [
   },
   {
     name: "Quality",
+    keywords: "Unit · UI · device cloud · types",
     practices: [
       "Unit tests on the domain, UI tests on the flows that make money",
       "Typed boundaries with TypeScript strict and Kotlin",
@@ -106,11 +110,13 @@ export const shipLayers = [
   },
   {
     name: "Release",
+    keywords: "Build · sign · roll out · flag",
     practices: ["Automated builds, signing and store uploads", "Staged rollouts behind feature flags", "Release notes that a PM can read"],
     tools: ["Fastlane", "GitHub Actions", "EAS", "Play Console"],
   },
   {
     name: "Observability",
+    keywords: "Crash-free · funnels · alerts",
     practices: ["Crash-free rate as a team metric", "Funnels and A/B tests that inform the roadmap", "Alerts on regressions, not on noise"],
     tools: ["Crashlytics", "Sentry", "Metabase", "Firebase Analytics"],
   },
@@ -250,3 +256,22 @@ export const openSource = [
   { repo: "DroidLocation", description: "Simple, lifecycle-aware location updates for Android.", fallbackStars: 0 },
   { repo: "Darasa-IEEEMadC", description: "IEEEmadC 2018 Best Team award app.", fallbackStars: 0 },
 ] as const;
+
+/** Career chapters for About (synt.ax-style "01 / 04" counter). Facts from docs/04. */
+export const journey = [
+  { year: "2014", title: "Hello, world", text: "First program. Windows apps, then Android." },
+  { year: "2018", title: "Community", text: "Led Developer Student Clubs at DeKUT and won IEEEmadC Best Team." },
+  { year: "2020", title: "Founder", text: "Built Kazi, MTN App of the Year 2021, while shipping Sendy across four countries." },
+  { year: "Now", title: "Millions", text: "Senior mobile engineer. 10+ apps, 5M+ users, Android, React Native and Flutter." },
+] as const;
+
+/** Prefill chips for the contact form. */
+export const contactPresets = [
+  "Hiring · senior or lead mobile role",
+  "New app · MVP to launch",
+  "Migration · RN New Architecture or KMM",
+  "Rescue · slow starts, jank or crashes",
+] as const;
+
+/** Working hours in Nairobi (EAT, UTC+3), used for the "your day vs mine" overlap. */
+export const workingHours = { start: 8, end: 18, utcOffset: 3 } as const;
