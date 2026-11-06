@@ -9,7 +9,7 @@ export function Services() {
       <div className="container-x py-20 md:py-36">
         <SectionHeading
           id="services-title"
-          index="05"
+          index="04"
           label="Services"
           title="What I can *do* for you."
           intro="Hire me full-time as a senior or lead engineer, or bring me in for a focused engagement."

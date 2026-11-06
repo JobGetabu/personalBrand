@@ -6,15 +6,6 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="border-t hairline">
-      <div className="container-x border-b hairline py-16 md:py-24">
-        <p className="display text-[clamp(2.5rem,8vw,6.5rem)]">
-          Apps that <em className="em">feel</em> native.
-          <br />
-          <Link href="/#contact" className="text-muted transition-colors hover:text-text">
-            Let&rsquo;s build <em className="em">yours</em> <span aria-hidden="true">→</span>
-          </Link>
-        </p>
-      </div>
       <div className="container-x grid gap-10 py-12 md:grid-cols-[1fr_auto_auto] md:items-start">
         <div className="space-y-3">
           <p className="text-2xl font-semibold tracking-tight">

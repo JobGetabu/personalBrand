@@ -61,7 +61,7 @@ export function Hero() {
             <span className="size-1.5 rounded-full bg-accent motion-safe:animate-pulse" aria-hidden="true" />
             Live · in production
           </p>
-          <dl className="grid grid-cols-3 gap-4 sm:flex sm:gap-8">
+          <dl className="grid grid-cols-2 gap-4 sm:flex sm:gap-8">
             {heroStats.map((s) => (
               <div key={s.label}>
                 <dt className="sr-only">{s.label}</dt>

@@ -6,7 +6,7 @@ export function Experience() {
   return (
     <section id="experience" aria-labelledby="exp-title" className="border-t hairline">
       <div className="container-x py-20 md:py-36">
-        <SectionHeading id="exp-title" index="04" label="Experience" title="Ten years, *shipping*." />
+        <SectionHeading id="exp-title" index="03" label="Experience" title="Ten years, *shipping*." />
         <div className="relative">
           <div className="absolute bottom-0 left-[7px] top-0 w-px bg-line md:left-[calc(25%-1px)]" aria-hidden="true">
             <div className="progress-line h-full w-full origin-top bg-accent" />

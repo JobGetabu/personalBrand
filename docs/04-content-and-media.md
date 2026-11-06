@@ -53,6 +53,8 @@ Smaller apps for a "More apps" strip: PIP College App (Flutter, 5K+ students), T
 - Andela Learning Community (ALC) Lead, alongside DSC DeKUT · 2018 – 2019.
 
 ## 4. Recognition
+- 1st place, OSF Kenya (Oct 2026, Nairobi): DeckWatch (deckwatch.vercel.app), a live
+  public-safety incident map for Kenya's 47 counties. Organisers: Code for Africa, Ushahidi, OSF Africa.
 - MTN Business App of the Year — Best African Solution (Sep 2021) — Kazi.
 - IEEEmadC Best Team Award (2018) — Darasa App.
 - Google Letter of Commendation · Google Africa Scholarship (Andela) Android course ·

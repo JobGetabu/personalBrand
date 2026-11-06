@@ -33,16 +33,17 @@ export const socials = [
 
 export const nav = [
   { label: "Work", href: "/#work" },
-  { label: "Lab", href: "/#lab" },
-  { label: "About", href: "/#about" },
   { label: "Services", href: "/#services" },
+  { label: "About", href: "/#about" },
   { label: "Contact", href: "/#contact" },
+  { label: "Lab", href: "/#lab" },
 ] as const;
 
 export const heroStats = [
   { value: 10, suffix: "+", label: "apps shipped" },
-  { value: 5, suffix: "M+", label: "users" },
-  { value: 2, suffix: "", label: "awards" },
+  { value: 5, suffix: "M+", label: "users on my code" },
+  { value: 53, suffix: "M", label: "reach via My OneApp" },
+  { value: 3, suffix: "", label: "awards" },
 ] as const;
 
 /** Monochrome wordmarks only; real logos need employer permission. TODO(verify) per company. */
@@ -138,7 +139,8 @@ export const experience = [
     period: "2023 – Now",
     bullets: [
       "Mobile engineer embedded with Andela partner teams.",
-      "Worked on Safaricom's My OneApp, which serves 53M people.", // TODO(verify): role on My OneApp and approval to name it
+      "Worked on Safaricom's My OneApp, used by 53M Kenyans.", // TODO(verify): role on My OneApp
+      "Now on a US app that reaches 5M Americans.",
     ],
     tech: ["Mobile", "Partner teams"], // TODO(verify): stack
   },
@@ -265,6 +267,12 @@ export const services = [
 ] as const;
 
 export const recognition = [
+  {
+    title: "1st place — DeckWatch",
+    by: "OSF Kenya · Code for Africa, Ushahidi & OSF Africa", // TODO(verify): official event/award name
+    year: "2026",
+    note: "Live public-safety incident map for Kenya's 47 counties",
+  },
   { title: "MTN Business App of the Year — Best African Solution", by: "MTN", year: "2021", note: "Kazi" },
   { title: "IEEEmadC Best Team Award", by: "IEEE", year: "2018", note: "Darasa app" },
   { title: "Google Africa Scholarship — Android", by: "Google & Andela", year: "", note: "Plus a Google Letter of Commendation" },
@@ -282,7 +290,7 @@ export const journey = [
   { year: "2014", title: "Hello, world", text: "First program. Windows apps, then Android." },
   { year: "2018", title: "Community", text: "Led the Andela Learning Community and DSC at DeKUT. Won IEEEmadC Best Team." },
   { year: "2020", title: "Founder", text: "Built Kazi, MTN App of the Year 2021, while shipping Sendy across four countries." },
-  { year: "Now", title: "Millions", text: "Building health apps for a leading insurer. Worked on Safaricom My OneApp, serving 53M people." },
+  { year: "Now", title: "Millions", text: "5M+ users on my code. Now building apps that reach 5M Americans and 53M Kenyans on Safaricom My OneApp." },
 ] as const;
 
 /** Prefill chips for the contact form. */

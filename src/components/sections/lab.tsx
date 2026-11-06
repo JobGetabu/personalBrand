@@ -7,7 +7,7 @@ export function Lab() {
       <div className="container-x py-20 md:py-36">
         <SectionHeading
           id="lab-title"
-          index="03"
+          index="08"
           label="Lab"
           title="Things you can *touch*."
           intro="Small interactive experiments about the problems I solve in mobile apps. Each one loads only when you scroll to it and pauses when you leave."

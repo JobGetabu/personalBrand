@@ -8,7 +8,7 @@ export function About() {
   return (
     <section id="about" aria-labelledby="about-title" className="border-t hairline">
       <div className="container-x py-20 md:py-36">
-        <SectionHeading id="about-title" index="07" label="About" title="Built to be *held*." />
+        <SectionHeading id="about-title" index="06" label="About" title="Built to be *held*." />
         <div className="grid-12 gap-y-12">
           <div className="col-span-full sm:col-span-3 lg:col-span-4">
             <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius)] border hairline bg-surface">

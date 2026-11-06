@@ -10,7 +10,7 @@ export function Contact({ status }: { status?: "sent" | "error" }) {
       <div className="glow pointer-events-none absolute -left-[20%] bottom-0 size-[80vmin]" aria-hidden="true" />
       <div className="container-x relative py-20 md:py-36">
         <p className="label-mono mb-8">
-          <span className="text-accent">08</span> — Contact
+          <span className="text-accent">07</span> — Contact
         </p>
         <h2 id="contact-title" data-split className="display text-[clamp(3.25rem,12vw,11rem)]">
           <Rich text="Let's build *yours*." />

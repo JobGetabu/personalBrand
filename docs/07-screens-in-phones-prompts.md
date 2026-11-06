@@ -91,3 +91,41 @@ Leave the 404 phone, lab posters, textures and brand images as they are.
 - "You changed the scene. Start again from image 1 and change only the phone screen."
 - "The screen is too small to read. Tilt the phone more toward the camera and enlarge it
   slightly; keep everything else."
+
+---
+
+## Round 2 (Job, 2026-11-06): hero screens
+
+### H1. Screen image for the rotating 3D hero phone
+Upload the six app icons from `assets/cases/app-icons/` (WeR1, GetMyBoat, Sendy, Kazi,
+Shackle, 360Score AI), then:
+> Create a phone screen image, portrait, 1170×2532 (exactly 9:19.5), to be used as the
+> screen texture of a 3D phone. It is a flat, front-on screen with no phone body, no
+> bezel, no perspective and no shadow around it.
+> Background: near-black #07080A with a slow, soft fluid glow of signal green #3DFFA2 and
+> violet #7C5CFF rising from the bottom third, like light under glass.
+> In the upper-middle, arrange the uploaded app icons as a neat 3×2 grid of rounded-square
+> icons, evenly spaced and centred, each with a faint green glow under it. Keep every icon
+> exactly as uploaded: do not redraw, recolour or invent logos.
+> Leave the top 6% clear (status bar area) and the bottom 15% clear apart from the glow.
+> No text, no clock, no status bar, no app names, no watermarks. Crisp, premium, minimal.
+
+Save as `hero-screen.png`. I'll load it onto the 3D phone's screen and keep the live ink
+effect as a soft layer on top, so it still reacts when you move the mouse.
+
+*Alternative (one app, full screen):* upload one clean screenshot instead of the icons and
+ask for "this screenshot, unchanged, at 1170×2532, with a soft green glow fading in from
+the bottom edge". The WeR1 player or the Sendy booking screen work best.
+
+### H2. `hero-held-mobile` with a real app on the phone
+Upload `hero-held-mobile.png` and one app screenshot (or one app icon), then paste the
+shared prompt from the top of this file, plus:
+> The phone is held sideways (landscape) in both hands, screen facing the camera. Show the
+> uploaded app on it, reading correctly for the viewer: if it's a portrait screenshot,
+> centre it on the landscape screen with dark #0B0B10 bars on both sides. If it's an app
+> icon, centre the icon on a near-black screen with a soft green glow behind it. Both
+> thumbs stay in front of the screen. Keep the person, face, hands, clothes, lighting and
+> background exactly unchanged.
+
+Save as `hero-held-mobile.png` (1200×1500) and `hero-held.png` (2400×1600) if you also
+redo the wide one.

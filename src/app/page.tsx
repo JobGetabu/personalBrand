@@ -7,6 +7,7 @@ import { Services } from "@/components/sections/services";
 import { Recognition } from "@/components/sections/recognition";
 import { About } from "@/components/sections/about";
 import { Contact } from "@/components/sections/contact";
+import { Closing } from "@/components/sections/closing";
 import { JsonLd } from "@/components/json-ld";
 import { site } from "@/lib/site";
 
@@ -27,12 +28,13 @@ export default async function Home({ searchParams }: PageProps<"/">) {
       <Hero />
       <Work />
       <Ship />
-      <Lab />
       <Experience />
       <Services />
       <Recognition />
       <About />
       <Contact status={status} />
+      <Closing />
+      <Lab />
     </>
   );
 }
