@@ -53,8 +53,10 @@ void main() {
   col += 0.04 * smoothstep(0.0, 1.0, sin((uv.y + uTime * 0.05) * 3.14159 * 2.0));
   if (uHasTex > 0.0) {
     // Real screen image (Job's app icons) with the live ink as a soft screen-blend layer on top.
-    vec3 tex = texture2D(uTex, uv).rgb;
-    vec3 ink = col * (0.4 + swirl * 0.6);
+    vec3 tex = min(texture2D(uTex, uv).rgb * 1.25, 1.0);
+    // Let less ink through over the icon grid (upper-middle) so the apps stay readable.
+    float icons = smoothstep(0.22, 0.12, abs(uv.y - 0.62)) * smoothstep(0.42, 0.3, abs(uv.x - 0.5));
+    vec3 ink = col * mix(0.4, 0.12, icons) + uA * swirl * 0.25;
     col = mix(col, 1.0 - (1.0 - tex) * (1.0 - ink), uHasTex);
   }
   col = mix(col, vec3(0.03, 0.035, 0.045), uScroll * 0.6);
