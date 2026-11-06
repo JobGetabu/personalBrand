@@ -27,13 +27,12 @@ export function HeroPhoneLoader() {
   return (
     <div className="relative mx-auto aspect-[4/5] w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[520px]">
       <Image
-        src={media.heroPhone.src}
+        src={media.heroPhoneMobile.src}
         alt=""
         fill
         priority
         sizes="(min-width: 1024px) 40vw, 90vw"
         className={`object-cover transition-opacity duration-700 [mask-image:radial-gradient(closest-side,#000_70%,transparent)] ${ready ? "opacity-0" : "opacity-100"}`}
-        unoptimized
       />
       {mode !== "poster" && (
         <div className="absolute inset-0">

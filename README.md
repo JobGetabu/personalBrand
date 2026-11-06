@@ -58,17 +58,18 @@ src/components/motion/      Lenis + GSAP layer, cursor follower, scroll helpers
    image) and set `cover:` to its key.
 4. The page, OG image, sitemap entry, RSS item and JSON-LD are generated automatically.
 
-## Swap in the generated images (docs/03-image-prompts.md)
+## Images
 
-Every placeholder in `public/images/placeholders/` is labelled with its file name, size and the
-prompt section that produces it.
+Generated art from `docs/03-image-prompts.md` lives in `public/images/{hero,cases,lab,errors}/`
+(WebP, metadata stripped, served as AVIF/WebP by `next/image`). The OG base art is
+`src/assets/og-base.png`; the prompts used are kept in `assets/source/`. Only the portrait is
+still a labelled placeholder in `public/images/placeholders/`.
 
-1. Save the GPT exports to `assets/raw/` (gitignored) using the placeholder names, e.g.
-   `hero-phone.png`, `case-wer1-cover.png`, `lab-physics.png`, `portrait.png`.
-2. `npm run images` → writes `public/images/<name>.avif` and `.webp` with all metadata stripped.
-3. In `src/lib/media.ts`, change that entry's `src` to `/images/<name>.webp` (or `.avif`) and set
-   `placeholder: false`.
-4. `npm run privacy:check` before committing.
+To add or replace an image:
+1. Put the export in `assets/raw/` (gitignored) and run `npm run images` → AVIF + WebP in
+   `public/images/` with all metadata stripped.
+2. Point the entry in `src/lib/media.ts` at it (`img("path", w, h, alt, promptSection)`).
+3. `npm run privacy:check` before committing.
 
 ## OG images
 

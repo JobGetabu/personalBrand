@@ -1,5 +1,10 @@
 import { ImageResponse } from "next/og";
+import { readFileSync } from "node:fs";
+import path from "node:path";
 import { site } from "./site";
+
+// Generated base art (docs/03-image-prompts.md §3): phone on the right, empty space left for type.
+const base = `data:image/png;base64,${readFileSync(path.join(process.cwd(), "src/assets/og-base.png")).toString("base64")}`;
 
 export const ogSize = { width: 1200, height: 630 };
 
@@ -15,11 +20,14 @@ export function ogImage({ eyebrow, title, footer }: { eyebrow: string; title: st
         flexDirection: "column",
         justifyContent: "space-between",
         padding: 72,
-        background: "radial-gradient(circle at 85% 40%, rgba(124,92,255,0.45), rgba(7,8,10,0) 55%), #07080A",
+        background: "#07080A",
+        position: "relative",
         color: "#EDEEF0",
         fontFamily: "sans-serif",
       }}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
+      <img src={base} width={1200} height={630} style={{ position: "absolute", top: 0, left: 0, width: 1200, height: 630 }} />
       <div style={{ display: "flex", alignItems: "center", gap: 20, fontSize: 24, color: "#8A8F98", letterSpacing: 2 }}>
         <div
           style={{
@@ -39,10 +47,10 @@ export function ogImage({ eyebrow, title, footer }: { eyebrow: string; title: st
         </div>
         {eyebrow.toUpperCase()}
       </div>
-      <div style={{ display: "flex", flexWrap: "wrap", fontSize: 96, fontWeight: 700, letterSpacing: -4, lineHeight: 1, maxWidth: 960 }}>
+      <div style={{ display: "flex", flexWrap: "wrap", fontSize: 84, fontWeight: 700, letterSpacing: -4, lineHeight: 1, maxWidth: 720 }}>
         {parts.map((p, i) =>
           p.startsWith("*") ? (
-            <span key={i} style={{ color: "#3DFFA2", fontStyle: "italic", marginRight: 22 }}>
+            <span key={i} style={{ color: "#3DFFA2", fontStyle: "italic", marginRight: parts[i + 1]?.startsWith(" ") ? 22 : 0 }}>
               {p.slice(1, -1)}
             </span>
           ) : (
